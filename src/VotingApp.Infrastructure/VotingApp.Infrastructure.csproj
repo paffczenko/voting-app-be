@@ -11,15 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VotingApp.Application\VotingApp.Application.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Candidate\Repositories\" />
     <Folder Include="Shared\Factories\" />
     <Folder Include="Shared\Options\" />
     <Folder Include="Voter\Repositories\" />
     <Folder Include="Vote\Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VotingApp.Domain\VotingApp.Domain.csproj" />
   </ItemGroup>
 
 </Project>

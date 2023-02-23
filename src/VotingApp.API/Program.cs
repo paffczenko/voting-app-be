@@ -24,6 +24,7 @@ builder.Services.AddMongo(mongoOptions);
 builder.Services.AddScoped<IVoteRepository, VoteRepository>();
 builder.Services.AddScoped<IVoterRepository, VoterRepository>();
 builder.Services.AddScoped<ICandidateRepository, CandidateRepository>();
+builder.Services.AddCors();
 
 var app = builder.Build();
 
@@ -35,6 +36,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(x => x.AllowAnyHeader()
+    .AllowAnyMethod()
+    .WithOrigins("http://localhost:3000"));
 
 app.MapGroup("/candidate")
     .MapCandidateApi()
